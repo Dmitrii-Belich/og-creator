@@ -62,15 +62,13 @@ export default function(type: string): any {
 
       const filename = `${type}/` + OgImageController.getHash(title) + '.jpeg'
       const currentFile = files?.find(file => file.name === filename)
-      // if (currentFile) {
-      if (false) {
+      if (currentFile) {
           res.status(HttpStatus.FOUND).redirect(`${process.env.STORAGE}${filename}`)
       } else {
         console.log('start')
         const image = await nodeHtmlToImage({
           html: fs.readFileSync(path.resolve(__dirname, `../../image-templates/${type}/index.html`)).toString(),
           puppeteerArgs: {
-            headless: true,
             defaultViewport: {
               width: 1200,
               height: 630
