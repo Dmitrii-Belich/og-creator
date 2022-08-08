@@ -1,0 +1,59 @@
+
+:root {
+  font-family: 'Manrope', sans-serif;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    padding: 96px;
+    position: relative;
+    width: 1200px;
+    height: 630px;
+    background: linear-gradient(221.39deg, #092433 27.65%, #EB4247 91.87%);
+}
+
+.noise {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    content: "";
+    z-index: 2;
+    display: block;
+    background-image: url(https://cdn.selectel.ru/site/img/texture.8016e8f.svg);
+    background-size: 260px;
+    opacity: .5;
+}
+
+img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    object-fit: cover;
+    z-index: -1;
+    opacity: 0.8;
+}
+.title {
+    font-style: normal;
+    margin-top: 96px;
+    font-weight: 300;
+    font-size: 70px;
+    line-height: 100px;
+    color: #fff;
+    max-width: 783px;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
