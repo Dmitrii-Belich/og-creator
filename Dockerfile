@@ -36,9 +36,6 @@ RUN npm init -y &&  \
     && chown -R pptruser:pptruser /package.json \
     && chown -R pptruser:pptruser /package-lock.json
 
-# A wildcard is used to ensure both package.json AND package-lock.json are copied
-USER pptruser
-
 COPY package*.json ./
 
 # Install app dependencies
@@ -49,6 +46,10 @@ COPY . .
 
 # Creates a `dist` folder with the production build
 RUN npm run build
+
+# A wildcard is used to ensure both package.json AND package-lock.json are copied
+USER pptruser
+
 
 # Start the server using the production build
 CMD ["node", "dist/main.js"]
